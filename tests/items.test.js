@@ -19,6 +19,7 @@ describe('single', () => {
   })
 
   it('should increment the views of an existant path', async () => {
+    await request(`${url}/existant`)
     const body = JSON.parse(await request(`${url}/existant`))
     expect(body.views).toEqual(2)
   })
